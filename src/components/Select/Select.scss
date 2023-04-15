@@ -1,0 +1,30 @@
+.select {
+    padding: 15px;
+    padding-top: 10px;
+    width: 168px;
+    height: 50px;
+    background: #ffffff;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 760px) {
+        width: 360px;
+    }
+}
+
+.ant-radio-button-checked {
+    background: #2196f3;
+}
+
+.selectGroup {
+    margin-bottom: 20px;
+    @media screen and (max-width: 760px) {
+        margin-top: 20px;
+    }
+}

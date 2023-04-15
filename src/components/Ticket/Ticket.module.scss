@@ -1,0 +1,63 @@
+.Ticket {
+    display: flex;
+    flex-direction: column;
+    width: 502px;
+    height: 184px;
+    background: #ffffff;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 760px) {
+        width: 360px;
+    }
+
+    &Top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &Price {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        color: #2196f3;
+        margin: 0;
+    }
+    &Bottom {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &FlightTo,
+    &FlightFrom {
+        display: flex;
+    }
+
+    &FlightTo {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    &FlightToItem,
+    &FlightFromItem {
+        height: 39px;
+        width: 141px;
+        margin-right: 20px;
+    }
+    &FlightToTop,
+    &FlightFromTop {
+        font-weight: 600;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #a0b0b9;
+    }
+
+    &FlightToBottom,
+    &FlightFromBottom {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        color: #4a4a4a;
+    }
+}

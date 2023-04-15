@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #f3f7fa;
+}
+.app {
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main-content {
+    display: flex;
+    flex-direction: column;
+    @media screen and (max-width: 760px) {
+        // width: 420px;
+        align-items: center;
+        text-align: center;
+    }
+}
+.information {
+    display: flex;
+    justify-content: center;
+
+    @media screen and (max-width: 760px) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.logo {
+    width: 75px;
+    height: 89px;
+    margin-bottom: 60px;
+}
+
+.buttonMore {
+    background: #2196f3;
+    border-radius: 5px;
+    height: 50px;
+    color: #f3f7fa;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+        background: #3b83bd;
+    }
+
+    @media screen and (max-width: 760px) {
+        width: 360px;
+    }
+}

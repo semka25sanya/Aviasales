@@ -1,0 +1,42 @@
+li {
+    list-style-type: none;
+}
+
+ul {
+    margin-left: 0;
+
+    padding-left: 0;
+}
+
+.transfers {
+    width: 232px;
+    height: 252px;
+    background: white;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-right: 20px;
+    &__name {
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 12px;
+        color: #4a4a4a;
+    }
+    @media screen and (max-width: 760px) {
+        margin-right: 0;
+    }
+}
+.ant-checkbox-group {
+    flex-direction: column;
+    // margin-left: 20px;
+}
+.ant-checkbox-wrapper {
+    // margin-left: 8px;
+    padding-left: 25px;
+    margin: 10px 30px 10px 8px;
+}
