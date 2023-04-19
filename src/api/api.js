@@ -5,9 +5,5 @@ export default class AviasalesApi {
         const jsonData = await response.json()
 
         return jsonData
-        // dispatch({
-        //     type: GET_ID,
-        //     data: jsonData,
-        // })
     }
 }

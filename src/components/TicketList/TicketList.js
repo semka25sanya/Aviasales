@@ -5,8 +5,8 @@ import { useSelector } from 'react-redux'
 import Ticket from '../Ticket/Ticket'
 import classes from '../App/App.module.scss'
 
-import filterRate from '../../filters/filterRate'
-import filterTransfers from '../../filters/filterTransfers'
+import filterRate from '../../utilits/filterRate'
+import filterTransfers from '../../utilits/filterTransfers'
 
 function TicketsList() {
     const transfers = useSelector((state) => {
@@ -23,20 +23,25 @@ function TicketsList() {
 
     const ticketsContent = useSelector((state) => {
         const { ticketsReducer } = state
-
         const res = filterTransfers(ticketsReducer.tickets, transfers)
-        return filterRate(res, rate)
-        // return filterRate(ticketsReducer.tickets, rate)
+        const ticketsRated = filterRate(res, rate)
+        return ticketsRated
+    })
+
+    const error = useSelector((state) => {
+        const { ticketsReducer } = state
+
+        return ticketsReducer.error
     })
 
     const [count, setCount] = useState(5)
     const fiveTickets = ticketsContent.slice(0, count)
 
     const ticketsMain =
-        transfers === '' || transfers.length === 0 ? (
+        transfers === '' || transfers.length === 0 || error === true ? (
             <Alert
                 message="Внимание!"
-                description="Рейсов, подходящих под заданные фильтры, не найдено"
+                description="Рейсов, подходящих под заданные фильтры, не найдено! Либо возникли проблемы с сервером :("
                 type="info"
                 showIcon
             />

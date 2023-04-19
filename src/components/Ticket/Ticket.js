@@ -1,31 +1,7 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { add } from 'date-fns'
 import classes from './Ticket.module.scss'
+import { getTimeFromMins, departureTime, arrivalTime } from '../../utilits/convertTime'
 
 export default function Ticket({ price, segments, carrier }) {
-    function getTimeFromMins(mins) {
-        const hours = Math.trunc(mins / 60)
-        const minutes = mins % 60
-        return `${hours} ч ${minutes} м`
-    }
-
-    function departureTime(data) {
-        const newData = new Date(data)
-        const hours = newData.getHours()
-        const minutes = newData.getMinutes()
-        return `${hours}:${minutes} `
-    }
-
-    function arrivalTime(dataOne, dataTwo) {
-        const result = add(new Date(dataOne), { minutes: dataTwo })
-        let hours = result.getHours()
-        let mins = result.getMinutes()
-
-        hours = hours < 10 ? `0${hours}` : hours
-        mins = mins < 10 ? `0${mins}` : mins
-
-        return `${hours}:${mins}`
-    }
     const urlForImg = `https://pics.avs.io/99/36/${carrier}.png`
     return (
         <li className={classes.Ticket}>

@@ -21,7 +21,6 @@ function App() {
         />
     )
 
-    // eslint-disable-next-line no-unused-vars
     const load = useSelector((state) => {
         const { ticketsReducer } = state
 
