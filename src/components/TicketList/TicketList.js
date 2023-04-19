@@ -37,8 +37,14 @@ function TicketsList() {
     const [count, setCount] = useState(5)
     const fiveTickets = ticketsContent.slice(0, count)
 
+
+    const errorMessage =
+        error === true ? (
+            <Alert style ={{marginBottom:'20px'}} message="Ошибка!" description="Ошибка получения данных с сервера!" type="warning" showIcon />
+        ) : null
+
     const ticketsMain =
-        transfers === '' || transfers.length === 0 || error === true ? (
+        transfers === '' || transfers.length === 0 ? (
             <Alert
                 message="Внимание!"
                 description="Рейсов, подходящих под заданные фильтры, не найдено! Либо возникли проблемы с сервером :("
@@ -60,6 +66,7 @@ function TicketsList() {
 
     return (
         <>
+            {errorMessage}
             {ticketsMain}
             {transfers === '' || transfers.length === 0 ? null : (
                 <button type="button" onClick={() => setCount(count + 5)} className={classes.buttonMore}>

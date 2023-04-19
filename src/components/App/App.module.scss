@@ -16,6 +16,7 @@ body {
 .main-content {
     display: flex;
     flex-direction: column;
+    width: 505px;
     @media screen and (max-width: 760px) {
         align-items: center;
         text-align: center;

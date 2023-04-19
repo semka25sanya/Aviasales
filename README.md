@@ -1,1 +1,1 @@
-https://aviasales-app-iota-seven.vercel.app/
+https://aviasales-beryl-seven.vercel.app/
