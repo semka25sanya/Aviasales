@@ -7,7 +7,6 @@ const initialState = {
 }
 
 export const ticketsReducer = (state = initialState, action = {}) => {
-    console.log(state.tickets)
     switch (action.type) {
         case LOAD_TICKETS_PART:
             return {

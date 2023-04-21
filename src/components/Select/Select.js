@@ -5,13 +5,12 @@ import { sortFlights } from '../../redux/actions'
 import './Select.scss'
 
 function Select() {
-    // eslint-disable-next-line no-unused-vars
     const [flights, setFlights] = useState('cheapest')
 
     const dispatch = useDispatch()
 
     function changeSelect(e) {
-        setFlights(e.target.value)
+        setFlights(flights)
         dispatch(sortFlights(e.target.value))
     }
 

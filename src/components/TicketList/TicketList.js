@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
-import { useState } from 'react'
-import { Alert, Space } from 'antd'
+import { useState, useMemo } from 'react'
+import { Alert } from 'antd'
 import { useSelector } from 'react-redux'
 import Ticket from '../Ticket/Ticket'
 import classes from '../App/App.module.scss'
@@ -21,12 +20,17 @@ function TicketsList() {
         return sortingFlightReducer.text
     })
 
-    const ticketsContent = useSelector((state) => {
+    const tickets = useSelector((state) => {
         const { ticketsReducer } = state
-        const res = filterTransfers(ticketsReducer.tickets, transfers)
+
+        return ticketsReducer.tickets
+    })
+
+    const ticketsContent = useMemo(() => {
+        const res = filterTransfers(tickets, transfers)
         const ticketsRated = filterRate(res, rate)
         return ticketsRated
-    })
+    }, [tickets, transfers, rate])
 
     const error = useSelector((state) => {
         const { ticketsReducer } = state
@@ -35,8 +39,9 @@ function TicketsList() {
     })
 
     const [count, setCount] = useState(5)
-    const fiveTickets = ticketsContent.slice(0, count)
 
+    // const fiveTickets = useMemo(() => ticketsContent.slice(0, count), [ticketsContent, count])
+    const fiveTickets = ticketsContent.slice(0, count)
     const errorMessage =
         error === true ? (
             <Alert
